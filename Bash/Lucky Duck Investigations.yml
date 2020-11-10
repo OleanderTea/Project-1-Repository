@@ -1,0 +1,23 @@
+Lucky Duck Investigations:
+
+The aim of this assignment was to use the logs of dealers schedules, and logs of players win losses
+to determine which dealer and player were working together to steal money from the Lucky Duck Casino.
+
+We used AWK and Grep to sort information and pull certain columns out of these logs to determine
+who the naughty ducklings were.
+
+Roulette Dealer by Time script:
+#!bash
+cat "$1_Dealer_schedule" | grep "$2" | awk -F" " '{print $1,$2,$5.$6}'
+~                                             
+Dealer working by time script:
+#!bash
+cat 0315* | grep -E "08:00:00 AM|02:00:00 PM|05:00:00 AM" | awk -F" " '{print $1,$2,$5,$6}' >> Dealers_working_during_losses
+
+Player Dealer Correlation TxT:
+Player: Mylie Schmidt
+Dealer: Billy Jones
+
+Mylie and Billy were both at the roulette tables at 8am, 2pm, 8pm, 
+11pm and 5am on 10/03 and 12/03, as well as 8am, 2pm and 5am on 15/03 - 
+during which times losses were recorded by (not so) Lucky Duck Casino.
