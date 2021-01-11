@@ -18,12 +18,15 @@ Integrating an ELK server allows admins to easily monitor the vulnerable VMs for
 
 The configuration details of each machine may be found below.
 
-|----------|------------|------------|------------------|
-| Jump Box | Gateway    | 10.0.0.5   | Linux            |
+
+| Name     | Function | IP | OS |
+|----------|-----------|------------|------------------|
+| Jump Box | Gateway   | 10.0.0.5   | Linux            |
 | Web 1   | Web Server | 10.0.0.4   | Linux            |
 | Web 2   | Web Server | 10.0.0.8   | Linux            |        
 | Web 3   | Web Server | 10.0.0.10  | Linux            |   
-| Elk      | Monitoring | 10.1.0.4   | Linux            |
+| Elk     | Monitoring | 10.1.0.4   | Linux            |
+
 
 ### Access Policies
 
@@ -53,7 +56,6 @@ The playbook implements the following tasks:
 - Install apt module 
 - Install pip3
 - Install pip module
-- Download and launch a docker container
 
 
 ### Target Machines & Beats
